@@ -8,10 +8,20 @@ addTask.addEventListener("submit", function (e) {
     task.replace(/\r?\n/g, "");
     if (task.length !== 0) {
         createTodoList(task);
+        addTask.reset();
     }
 }, false);
 
 var createTodoList = function (task) {
-    var html = "<li><span>" + task;
+    var html = `<li>
+<span>${task}</span>
+<i class="far fa-trash-alt delete"></i>
+</li>`;
     list.innerHTML += html;
 };
+
+list.addEventListener("click", function (e){
+    if(e.target.classList.contains("delete")){
+        e.target.parentNode.remove();
+    }
+}, false);
