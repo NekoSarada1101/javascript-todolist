@@ -13,9 +13,10 @@ addTask.addEventListener("submit", function (e) {
 }, false);
 
 var createTodoList = function (task) {
-    var html = `<li>
-<span>${task}</span>
-<i class="far fa-trash-alt delete"></i>
+    var html = `
+<li>
+  <i class="far fa-trash-alt delete"></i>
+  <span>${task}</span>
 </li>`;
     list.innerHTML += html;
 };
